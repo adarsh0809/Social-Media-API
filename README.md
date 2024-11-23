@@ -19,23 +19,23 @@
 2. POST /auth/login
     Description: Login a user.
     Request Body:
-    json
-    {
-        "email": "String",
-        "password": "String"
-    }
+    - json
+        {
+            "email": "String",
+            "password": "String"
+        }
 
     Response: 200 OK
     json
     {
-        "token": "JWT_Token"
+    "token": "JWT_Token"
     }
 
 
 3. POST /posts
     Description: Create a post.
     Request Body:
-    
+    - json
     {
         "title": "String",
         "content": "String",
@@ -57,7 +57,7 @@
     Description: Retrieve posts by user.
     Params: userId (in URL)
     Response: 200 OK
-    json
+    - json
         [
         {
             "_id": "ObjectId",
@@ -73,16 +73,15 @@
     5. POST /comments
     Description: Add a comment to a post.
     Request Body:
-    json
-    Copy code
+    - json
     {
         "text": "String",
         "post": "ObjectId",
         "user": "ObjectId"
-        }
-    Response: 201 Created
+    }
 
-    json
+    Response: 201 Created
+    - json
         {
         "_id": "ObjectId",
         "text": "String",
@@ -96,7 +95,7 @@
     Description: Retrieve comments for a post.
     Params: postId (in URL)
     Response: 200 OK
-    json
+    - json
     [
         {
             "_id": "ObjectId",
