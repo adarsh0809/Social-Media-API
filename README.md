@@ -1,3 +1,62 @@
+# Social Media API
+
+This is a RESTful API for a social media platform that supports user registration, authentication, creating posts, and commenting on posts. Built using **Node.js**, **Express.js**, and **MongoDB**, the API is secure and scalable.
+
+---
+
+## Features
+- User registration and login with JWT-based authentication.
+- Create, read, and retrieve posts by users.
+- Add comments to posts.
+- MongoDB as the database for storing application data.
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+Ensure the following tools are installed:
+- Node.js (v14 or higher)
+- MongoDB (local or MongoDB Atlas)
+- Git
+
+### Installation Steps
+
+1. **Clone the Repository**  
+   Run the following commands:
+   ```bash
+   git clone https://github.com/adarsh0809/Social-Media-API
+   cd social-media-api
+   ```
+
+
+## Install Dependencies
+Install the required npm packages:
+```bash
+npm install
+```
+
+Environment Variables
+Create a .env file in the root directory and add the following configuration:
+
+```bash
+PORT=4000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+Run the Application
+Start the server locally with:
+
+```bash
+npm start
+```
+The API will be accessible at http://localhost:4000.
+
+
+
+
+
+
 # API Documentation
 
 ## 1. **Register a New User**
