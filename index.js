@@ -9,6 +9,8 @@ import { Server } from 'socket.io';
 import AuthRoute from './Routes/AuthRoute.js';
 import PostRoute from './Routes/PostRoute.js';
 import CommentRoute from './Routes/CommentRoute.js';
+import CommentModel from "./Models/commentModel.js";
+
 
 // Initialize app and server
 const app = express();
@@ -54,7 +56,7 @@ io.on('connection', (socket) => {
 });
 
 // New comment notification
-import CommentModel from './Models/commentModel.js';
+
 export const addComment = async (req, res) => {
   try {
     const newComment = await CommentModel.create(req.body);
