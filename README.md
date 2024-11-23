@@ -35,8 +35,7 @@
 3. POST /posts
     Description: Create a post.
     Request Body:
-    json
-    Copy code
+    
     {
         "title": "String",
         "content": "String",
