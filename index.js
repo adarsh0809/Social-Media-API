@@ -66,6 +66,10 @@ export const addComment = async (req, res) => {
   }
 };
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the API!");
+});
+
 // Export server for testing
 export default server;
 export { io };
