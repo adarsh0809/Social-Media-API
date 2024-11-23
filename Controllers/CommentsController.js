@@ -1,6 +1,7 @@
 import { io } from "../index.js"; // Import the io object from index.js
 import CommentModel from "../Models/CommentModel.js";
-import PostModel from "../Models/PostModel.js";
+
+import PostModel from "../Models/postModel.js";
 
 // Add a comment to a post
 export const addComment = async (req, res) => {
