@@ -54,7 +54,7 @@ io.on('connection', (socket) => {
 });
 
 // New comment notification
-import CommentModel from './Models/CommentModel.js';
+import CommentModel from './Models/commentModel.js';
 export const addComment = async (req, res) => {
   try {
     const newComment = await CommentModel.create(req.body);

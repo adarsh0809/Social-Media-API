@@ -1,5 +1,5 @@
 import { io } from "../index.js"; // Import the io object from index.js
-import CommentModel from "../Models/CommentModel.js";
+import CommentModel from "../Models/commentModel.js";
 
 import PostModel from "../Models/postModel.js";
 
