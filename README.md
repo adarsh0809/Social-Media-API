@@ -1,117 +1,98 @@
-## Social Media API Documentation
-1. POST /auth/register
-    Description: Register a new user.
-    Request Body:
-    - json
-        {
-            "name": "String",
-            "email": "String",
-            "password": "String"
-        }
+# API Documentation
 
-    Response: 201 Created
-    json
-    {
-    "message": "User registered successfully"
-    }
+## 1. **Register a New User**
+**POST** `/auth/register`  
+**Description:** Register a new user.  
+**Request Body:**
+```json
+{
+  "name": "String",
+  "email": "String",
+  "password": "String"
+}
+```
 
-
-2. POST /auth/login
-    Description: Login a user.
-    Request Body:
-    - json
-        {
-            "email": "String",
-            "password": "String"
-        }
-
-    Response: 200 OK
-    json
-    {
-    "token": "JWT_Token"
-    }
+## 2. **Login User**
+**POST** `/auth/login`  
+**Description:** Login a user and return a JWT token.  
+**Request Body:**
+```json
+{
+  "email": "String",
+  "password": "String"
+}
+```
 
 
-3. POST /posts
-    Description: Create a post.
-    Request Body:
-    - json
-    {
-        "title": "String",
-        "content": "String",
-        "user": "ObjectId"
-    }
+## 3. **Create a Post**
+**POST** `/posts`  
+**Description:** Create a new post.  
+**Request Body:**
+```json
+{
+  "title": "String",
+  "content": "String",
+  "user": "ObjectId"
+}
 
-    Response: 201 Created
-    json
-    {
-        "_id": "ObjectId",
-        "title": "String",
-        "content": "String",
-        "user": "ObjectId",
-        "createdAt": "Date",
-        "updatedAt": "Date"
-    }
+```
 
-4. GET /posts/:userId
-    Description: Retrieve posts by user.
-    Params: userId (in URL)
-    Response: 200 OK
-    - json
-        [
-        {
-            "_id": "ObjectId",
-            "title": "String",
-            "content": "String",
-            "user": "ObjectId",
-            "createdAt": "Date",
-            "updatedAt": "Date"
-        }
-        ]
+## 4. **Retrieve Posts by User**
+**GET** `/posts/:userId`  
+**Description:** Retrieve all posts created by a specific user.  
+**Params:**  
+- `userId` (in URL)  
 
+**Response:**
+```json
+[
+  {
+    "_id": "ObjectId",
+    "title": "String",
+    "content": "String",
+    "user": "ObjectId",
+    "createdAt": "Date",
+    "updatedAt": "Date"
+  }
+]
+```
+## 5. **Add a Comment to a Post**
+**POST** `/comments`  
+**Description:** Add a comment to a post.  
+**Request Body:**
+```json
+{
+  "text": "String",
+  "post": "ObjectId",
+  "user": "ObjectId"
+}
+```
+## 6. **Retrieve Comments for a Post**
+**GET** `/comments/:postId`  
+**Description:** Retrieve all comments for a specific post.  
+**Params:**
+- `postId`: The ID of the post (in URL).
 
-    5. POST /comments
-    Description: Add a comment to a post.
-    Request Body:
-    - json
-    {
-        "text": "String",
-        "post": "ObjectId",
-        "user": "ObjectId"
-    }
-
-    Response: 201 Created
-    - json
-        {
-        "_id": "ObjectId",
-        "text": "String",
-        "post": "ObjectId",
-        "user": "ObjectId",
-        "createdAt": "Date"
-        }
-
-
-    6. GET /comments/:postId
-    Description: Retrieve comments for a post.
-    Params: postId (in URL)
-    Response: 200 OK
-    - json
-    [
-        {
-            "_id": "ObjectId",
-            "text": "String",
-            "post": "ObjectId",
-            "user": "ObjectId",
-            "createdAt": "Date"
-        }
-    ]
-    Error Codes:
+**Response:**
+```json
+[
+  {
+    "_id": "ObjectId",
+    "text": "String",
+    "post": "ObjectId",
+    "user": "ObjectId",
+    "createdAt": "Date"
+  }
+]
+```
 
 
-    400 Bad Request: Invalid input data.
-    401 Unauthorized: Invalid credentials.
-    404 Not Found: Resource not found.
-    500 Internal Server Error: Server-side error.
+
+- **400 Bad Request**: Invalid input data.
+- **401 Unauthorized**: Invalid credentials.
+- **404 Not Found**: Resource not found.
+- **500 Internal Server Error**: Server-side error.
+
 
 
 ## Mongoose Schema Design
