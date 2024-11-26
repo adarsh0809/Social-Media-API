@@ -3,7 +3,6 @@
 This is a RESTful API for a social media platform that supports user registration, authentication, creating posts, and commenting on posts. Built using **Node.js**, **Express.js**, and **MongoDB**, the API is secure and scalable.
 
 ---
-
 ## Features
 - User registration and login with JWT-based authentication.
 - Create, read, and retrieve posts by users.
